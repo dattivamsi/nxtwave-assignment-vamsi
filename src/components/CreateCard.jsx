@@ -48,22 +48,21 @@ const CreateCard = () => {
     reset({});
     history("/cards")
   
-    console.log(data);
-    // const response = fetch(
-    //   "https://media-content.ccbp.in/website/react-assignment/add_resource.json",
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   }
-    // );
-    // if (response.ok) {
-    //   reset({});
-    // toast.success("success");
-    // history("/cards")
-    // }
+    const response = fetch(
+      "https://media-content.ccbp.in/website/react-assignment/add_resource.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    if (response.ok) {
+      reset({});
+    toast.success("success");
+    history("/cards")
+    }
   };
 
   // Handle click to navigate back to "/cards"
